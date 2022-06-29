@@ -1,10 +1,13 @@
 /* 
  * Membership unlock for vsco & filebox
  * Please note that you may need to reinstall app to make it work.
- * 
- * Type: http-response (requires body)
- * Regex: ^https?:\/\/api\.revenuecat\.com\/v\d\/subscribers\/
- * Mitm: api.revenuecat.com
+ 
+ [rewrite_local]
+ ^https?:\/\/api\.revenuecat\.com\/v\d\/subscribers\/ url script-response-body https://raw.githubusercontent.com/RoboticsNotes/SECTION-9/private/Script/vsco.js
+ 
+ [mitm]
+ api.revenuecat.com
+ 
  */
 
 const resp = {};
